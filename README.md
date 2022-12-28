@@ -75,7 +75,7 @@
   - import the generated fbx file
     - SMPL-to-FBX\XXX\XXX.fbx
     
-# Further Works
+# Further work
 
 - :warning: Now, animations are locked in place. It will be fixed in the future.
 
