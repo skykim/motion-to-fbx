@@ -1,10 +1,13 @@
 # motion-to-fbx
  - How to convert motion animation obtained using diffusion model to SMPL FBX file for Unity
- - Diffusion 모델을 통해 추출된 모션에니메이션을 SMPL 모델의 FBX 파일로 변환하여 Unity에서 Import하는 방법을 다룹니다.
+ - 딥러닝 모델을 통해 추출된 모션에니메이션을 SMPL 모델의 FBX 파일로 변환하여 Unity에서 Import하는 방법
 
 # Demo
 
-![ezgif-4-41bca8b5b4](https://user-images.githubusercontent.com/18140805/209769258-648ac671-ed50-46b1-a99b-b992e5ed7641.gif)
+ - Input: A person stretches both hands up to the sky, then lowers them
+ - Output
+
+   ![ezgif-4-41bca8b5b4](https://user-images.githubusercontent.com/18140805/209769258-648ac671-ed50-46b1-a99b-b992e5ed7641.gif)
 
 ## 1) Text to Motion
 - Input: motion text (input.txt)
@@ -65,3 +68,16 @@
 - Procedure
   - import the generated fbx file
     - SMPL-to-FBX\XXX\XXX.fbx
+
+# Appendix
+
+ ## A map of 22 joints (comparing with SMPL)
+- 'MidHip': 0
+- 'LHip': 1, 'LKnee': 4, 'LAnkle': 7, 'LFoot': 10
+- 'RHip': 2, 'RKnee': 5, 'RAnkle': 8, 'RFoot': 11
+- 'LShoulder': 16, 'LElbow': 18, 'LWrist': 20
+- 'RShoulder': 17, 'RElbow': 19, 'RWrist': 21
+- 'spine1': 3, 'spine2': 6, 'spine3': 9,  'Neck': 12, 'Head': 15
+- 'LCollar':13, 'Rcollar' :14
+
+ ![image](https://user-images.githubusercontent.com/18140805/209820687-4334b9ab-84d2-4be4-bce2-a73a5f4570d7.png)
