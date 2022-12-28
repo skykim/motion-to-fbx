@@ -1,13 +1,19 @@
 # motion-to-fbx
- - How to convert motion animation obtained using diffusion model to SMPL FBX file for Unity
- - 딥러닝 모델을 통해 추출된 모션에니메이션을 SMPL 모델의 FBX 파일로 변환하여 Unity에서 Import하는 방법
+- How to convert motion text to SMPL FBX file for Unity
+- 텍스트로 부터 추출된 에니메이션 모션을 SMPL 모델의 FBX 파일로 Retargeting하여 Unity에서 Import하는 방법
 
 # Demo
 
- - Input: A person stretches both hands up to the sky, then lowers them
- - Output
+- A person stretches both hands up to the sky, then lowers them
+  - num_smplify_iters: 20
 
-   ![ezgif-4-41bca8b5b4](https://user-images.githubusercontent.com/18140805/209769258-648ac671-ed50-46b1-a99b-b992e5ed7641.gif)
+   ![ezgif-2-618ea338da](https://user-images.githubusercontent.com/18140805/209832183-1013fe0a-598f-482f-bbc7-eb9e8d8dabef.gif)
+
+- A person swimming forward.
+  - num_smplify_iters: 50
+
+  ![ezgif-2-e92593d1e9](https://user-images.githubusercontent.com/18140805/209837946-cd815f26-588c-4549-996a-204d5af09f7c.gif)
+
 
 ## 1) Text to Motion
 - Input: motion text (input.txt)
@@ -40,7 +46,7 @@
       - joints2smpl\demo\demo_data\XXX.pkl
   - execute command
      ```
-     python fit_seq.py --files XXX.npy
+     python fit_seq.py --files XXX.npy --num_smplify_iters 20
      ```
 - Reference
   - [joints2smpl](https://github.com/wangsen1312/joints2smpl)
@@ -68,6 +74,10 @@
 - Procedure
   - import the generated fbx file
     - SMPL-to-FBX\XXX\XXX.fbx
+    
+## Problems
+
+- :warning: Now, animations are locked in place. It will be fixed in the future.
 
 # Appendix
 
